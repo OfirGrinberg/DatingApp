@@ -36,7 +36,7 @@ export class AccountService {
     );
   }
 
-  serCurrentUser(user: User) {
+  setCurrentUser(user: User) {
     this.currenUserSource.next(user);
   }
 
