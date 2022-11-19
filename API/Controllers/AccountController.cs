@@ -11,12 +11,12 @@ namespace API.Controllers
 {
    public class AccountController : BaseApiController
    {
-      public DataContext _context { get; }
-      public ITokenService _tokenService { get; }
+      private readonly DataContext _context;
+      private readonly ITokenService _tokenService;
       public AccountController(DataContext context, ITokenService tokenService)
       {
-        _tokenService = tokenService;
-        _context = context;
+         _context = context;
+         _tokenService = tokenService;
       }
 
       [HttpPost("register")]

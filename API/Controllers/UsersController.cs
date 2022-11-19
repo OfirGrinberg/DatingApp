@@ -1,6 +1,4 @@
 using API.Data;
-using System.Collections.Generic;
-using System.Linq;
 using API.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +8,7 @@ namespace API.Controllers
 {
    public class UsersController : BaseApiController
    {
-      public DataContext _context { get; }
+      private readonly DataContext _context;
       public UsersController(DataContext context)
       {
          _context = context;
