@@ -4,12 +4,12 @@ using API.Errors;
 
 namespace API.Middleware
 {
-   public class ExceptionMiddelware
+   public class ExceptionMiddleware
    {
       private readonly RequestDelegate _next;
-      private readonly ILogger<ExceptionMiddelware> _logger;
+      private readonly ILogger<ExceptionMiddleware> _logger;
       private readonly IHostEnvironment _env;
-      public ExceptionMiddelware(RequestDelegate next, ILogger<ExceptionMiddelware> logger, IHostEnvironment env)
+      public ExceptionMiddleware(RequestDelegate next, ILogger<ExceptionMiddleware> logger, IHostEnvironment env)
       {
          _env = env;
          _logger = logger;

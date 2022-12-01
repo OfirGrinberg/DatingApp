@@ -1,9 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
-// const getError = (err: { statusText: string; status: any }, str: string) =>
-//   console.log(err.statusText === 'OK' ? str : err.statusText, err.status);
-
 @Component({
   selector: 'app-test-errors',
   templateUrl: './test-errors.component.html',
@@ -16,10 +13,6 @@ export class TestErrorsComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {}
-
-  getError(err: { statusText: string; status: number }, str: string) {
-    console.log(err.statusText === 'OK' ? str : err.statusText, err.status);
-  }
 
   get404Error() {
     this.http.get(this.baseUrl + 'buggy/not-found').subscribe({
@@ -59,7 +52,7 @@ export class TestErrorsComponent implements OnInit {
       next: (response) => {
         console.log(response);
       },
-      error: (err) => this.getError(err, 'Unauthorised'),
+      error: (error) => console.log(error),
     });
   }
 
